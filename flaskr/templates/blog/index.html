@@ -20,6 +20,9 @@
         {% endif %}
       </header>
       <p class="body">{{ post['body'] }}</p>
+      <input type="submit" value="Approve">
+      <input type="submit" value="Disapprove">
+      <h2>Votes: {{ post['id'] }} {{ post['votes'] }}</h2>
     </article>
     {% if not loop.last %}
       <hr>

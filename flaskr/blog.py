@@ -34,9 +34,9 @@ def create():
         else:
             db = get_db()
             db.execute(
-                'INSERT INTO post (title, body, author_id)'
-                ' VALUES (?, ?, ?)',
-                (title, body, g.user['id'])
+                'INSERT INTO post (title, body, author_id, votes)'
+                ' VALUES (?, ?, ?, ?)',
+                (title, body, g.user['id'], 0)
             )
             db.commit()
             return redirect(url_for('blog.index'))
